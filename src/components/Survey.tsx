@@ -9,7 +9,6 @@ export const Survey: React.FC = () => {
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        setLoading(true)
 
         const transformedArray = Object.keys(formData).map((key, index) => ({
             question_id: `${index + 1}`,
@@ -30,7 +29,7 @@ export const Survey: React.FC = () => {
             axios
                 .request(config)
                 .then((response) => {
-                    setLoading(false)
+                    setLoading(true)
 
                     console.log(JSON.stringify(response.data))
                 })
@@ -166,7 +165,7 @@ export const Survey: React.FC = () => {
                 <textarea name="answer10" onChange={handleInputChange}></textarea>
             </div>
             <button type="submit" className="bg-fuchsia-700 p-4 text-white">
-                {loading ? 'Enviado' : 'Enviar'}
+                {loading ? 'Enviado 👍🏻' : 'Enviar'}
             </button>
         </form>
     )
