@@ -5,9 +5,11 @@ import type { AxiosRequestConfig } from 'axios'
 
 export const Survey: React.FC = () => {
     const [formData, setFormData] = useState<any>({})
+    const [loading, setLoading] = useState<Boolean>(false)
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+        setLoading(true)
 
         const transformedArray = Object.keys(formData).map((key, index) => ({
             question_id: `${index + 1}`,
@@ -28,9 +30,13 @@ export const Survey: React.FC = () => {
             axios
                 .request(config)
                 .then((response) => {
+                    setLoading(false)
+
                     console.log(JSON.stringify(response.data))
                 })
                 .catch((error: any) => {
+                    setLoading(false)
+
                     console.log(error)
                 })
         })
@@ -50,7 +56,7 @@ export const Survey: React.FC = () => {
             </div>
 
             <h1 className="text-1xl relative -top-[52px] font-bold leading-6 text-center text-violet-900">
-                Revisa el prototipo. Luego desliza aquí para diligenciar la encuesta: <span className="inlie-block relative text-4xl hand-animated">👇🏻</span>
+                Revisa el prototipo. Luego desliza aquí para diligenciar la encuesta: <span className="inline-block relative text-4xl hand-animated">👇🏻</span>
             </h1>
 
             <picture className="mx-auto">
@@ -160,7 +166,7 @@ export const Survey: React.FC = () => {
                 <textarea name="answer10" onChange={handleInputChange}></textarea>
             </div>
             <button type="submit" className="bg-fuchsia-700 p-4 text-white">
-                Enviar
+                {loading ? 'Enviado' : 'Enviar'}
             </button>
         </form>
     )
