@@ -48,9 +48,14 @@ export const Survey: React.FC = () => {
             <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
                 <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-fuchsia-400 opacity-20 blur-[100px]"></div>
             </div>
+
             <h1 className="text-1xl relative -top-[52px] font-bold leading-6 text-center text-violet-900">
                 Revisa el prototipo. Luego desliza aquí para diligenciar la encuesta: <span className="block text-4xl hand-animated">👇🏻</span>
             </h1>
+
+            <picture className="mx-auto">
+                <img src="/wenti-logo.png" alt="" />
+            </picture>
             <div>
                 <label>1. ¿En qué medida te resulta útil la función de gestión de Mis Tickets?</label>
                 <select name="answer1" onChange={handleInputChange}>
@@ -63,7 +68,7 @@ export const Survey: React.FC = () => {
                 </select>
             </div>
             <div>
-                <label>2. ¿Has utilizado la función de carpooling para compartir viajes con otros usuarios?</label>
+                <label>2. ¿Has utilizado funciones parecidas de carpooling para compartir viajes con otros usuarios?</label>
                 <select name="answer2" onChange={handleInputChange}>
                     <option value="">Seleccione una opción</option>
                     <option value="Sí, frecuentemente"> Sí, frecuentemente</option>
