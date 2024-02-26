@@ -56,7 +56,7 @@ export const Survey: React.FC = () => {
             </div>
 
             <h1 className="text-1xl relative -top-[52px] font-bold leading-6 text-center text-violet-900">
-                Revisa el prototipo. Luego desliza aquí para diligenciar la encuesta: <span className="inline-block relative text-4xl hand-animated">👇🏻</span>
+                Una vez revisado el prototipo deslice desde este punto para diligenciar la encuesta: <span className="inline-block relative text-4xl hand-animated">👇🏻</span>
             </h1>
 
             <picture className="mx-auto">
